@@ -1,4 +1,4 @@
-package br.itbam.statisticcovid
+package br.itbam.statisticcovid.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import br.itbam.statisticcovid.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navController = Navigation.findNavController(this, R.id.fragment)
+        navController = Navigation.findNavController(this,
+            R.id.fragment
+        )
         bottomNav.setupWithNavController(navController)
         NavigationUI.setupActionBarWithNavController(this, navController)
     }

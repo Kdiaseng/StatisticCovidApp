@@ -5,7 +5,7 @@
     android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OverViewFragment">
+    tools:context=".views.fragments.OverViewFragment">
 
     <TableLayout
         android:id="@+id/tbOverview"
