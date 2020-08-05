@@ -18,7 +18,7 @@ class GlobalSummary(
     @SerializedName("NewRecovered")
     val newRecovered: Long,
 
-    @SerializedName("NewConfirmed")
+    @SerializedName("TotalRecovered")
     val totalRecovered: Long
 
 )

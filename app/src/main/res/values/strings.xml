@@ -14,4 +14,8 @@
     <string name="total_deaths">New Deaths</string>
     <string name="total_deaths_label">Total deaths</string>
     <string name="new_recovered">New recovered</string>
+    <string name="total_confirmed">Total Confirmed</string>
+    <string name="new_deaths">New Deaths</string>
+    <string name="new_recovered_label">New Recovered</string>
+    <string name="total_recovered_label">Total Recovered</string>
 </resources>

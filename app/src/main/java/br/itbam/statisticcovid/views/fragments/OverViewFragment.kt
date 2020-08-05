@@ -1,21 +1,37 @@
 package br.itbam.statisticcovid.views.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.itbam.statisticcovid.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import br.itbam.statisticcovid.databinding.FragmentOverViewBinding
+import br.itbam.statisticcovid.viewmodels.GeneralViewModel
 
 
 class OverViewFragment : Fragment() {
+
+    private lateinit var generalViewModel: GeneralViewModel
+    private lateinit var dataBinding: FragmentOverViewBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_over_view, container, false)
+        dataBinding = FragmentOverViewBinding.inflate(inflater, container, false)
+        generalViewModel = ViewModelProvider(this).get(GeneralViewModel::class.java)
+        dataBinding.viewmodel = generalViewModel
+        dataBinding.lifecycleOwner = this
+        return dataBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        loadData()
+    }
+
+    private fun loadData() {
+        generalViewModel.getStatisticDataCovidWorld()
+    }
 }

@@ -1,239 +1,263 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/background"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".views.fragments.OverViewFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TableLayout
-        android:id="@+id/tbOverview"
+    <data>
+
+        <import type="java.text.NumberFormat" />
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewmodel"
+            type="br.itbam.statisticcovid.viewmodels.GeneralViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".views.fragments.OverViewFragment">
 
-        <TableRow
-            android:padding="10dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center_horizontal">
+        <TableLayout
+            android:id="@+id/tbOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.card.MaterialCardView
-                app:cardCornerRadius="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="25dp">
+            <TableRow
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvNewConfirmedLabel"
-                        style="@style/TextLabel"
-                        android:text="@string/new_confirmed"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvNewConfirmedValue"
-                        style="@style/TextValue"
-                        android:text="@string/new_confirmed_value"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvNewConfirmedLabel" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvNewConfirmedLabel"
+                            style="@style/TextLabel"
+                            android:text="@string/new_confirmed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvNewConfirmedValue"
+                            style="@style/TextValue"
+                            android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(viewmodel.globalResultLiveData.newConfirmed))}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvNewConfirmedLabel" />
 
-            </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                app:cardCornerRadius="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="150dp"
-                android:layout_height="100dp">
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvTotalConfirmedLabel"
-                        style="@style/TextLabel"
-                        android:text="@string/new_confirmed"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvTotalConfirmedValue"
-                        style="@style/TextValue"
-                        android:text="@string/new_confirmed_value"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvTotalConfirmedLabel" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTotalConfirmedLabel"
+                            style="@style/TextLabel"
+                            android:text="@string/total_confirmed"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTotalConfirmedValue"
+                            style="@style/TextValue"
+                            android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(viewmodel.globalResultLiveData.totalConfirmed))}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvTotalConfirmedLabel" />
 
-            </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </TableRow>
+                </com.google.android.material.card.MaterialCardView>
 
-        <TableRow
-            android:padding="10dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center_horizontal">
+            </TableRow>
 
-            <com.google.android.material.card.MaterialCardView
-                app:cardCornerRadius="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="25dp">
+            <TableRow
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvNewDeathsLabel"
-                        style="@style/TextLabel"
-                        android:text="@string/new_confirmed"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvNewDeathsValue"
-                        style="@style/TextValue"
-                        android:text="@string/new_confirmed_value"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvNewDeathsLabel" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvNewDeathsLabel"
+                            style="@style/TextLabel"
+                            android:text="@string/new_deaths"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvNewDeathsValue"
+                            style="@style/TextValue"
+                            android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(viewmodel.globalResultLiveData.newDeaths))}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvNewDeathsLabel" />
 
-            </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                app:cardCornerRadius="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="150dp"
-                android:layout_height="100dp">
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvTotalDeathsLabel"
-                        style="@style/TextLabel"
-                        android:text="@string/new_confirmed"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvTotalDeathsValue"
-                        style="@style/TextValue"
-                        android:text="@string/new_confirmed_value"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvTotalDeathsLabel" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTotalDeathsLabel"
+                            style="@style/TextLabel"
+                            android:text="@string/total_deaths_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTotalDeathsValue"
+                            style="@style/TextValue"
+                            android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(viewmodel.globalResultLiveData.totalDeaths))}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvTotalDeathsLabel" />
 
-            </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </TableRow>
+                </com.google.android.material.card.MaterialCardView>
 
-        <TableRow
-            android:padding="10dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center_horizontal">
+            </TableRow>
 
-            <com.google.android.material.card.MaterialCardView
-                app:cardCornerRadius="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="25dp">
+            <TableRow
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvNewRecoveredLabel"
-                        style="@style/TextLabel"
-                        android:text="@string/new_confirmed"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvNewRecoveredValue"
-                        style="@style/TextValue"
-                        android:text="@string/new_confirmed_value"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvNewRecoveredLabel" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvNewRecoveredLabel"
+                            style="@style/TextLabel"
+                            android:text="@string/new_recovered_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvNewRecoveredValue"
+                            style="@style/TextValue"
+                            android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(viewmodel.globalResultLiveData.newRecovered))}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvNewRecoveredLabel" />
 
-            </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                app:cardCornerRadius="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_width="150dp"
-                android:layout_height="100dp">
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvTotalRecoveredLabel"
-                        style="@style/TextLabel"
-                        android:text="@string/new_confirmed"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvTotalRecoveredValue"
-                        style="@style/TextValue"
-                        android:text="@string/new_confirmed_value"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvTotalRecoveredLabel" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTotalRecoveredLabel"
+                            style="@style/TextLabel"
+                            android:text="@string/total_recovered_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTotalRecoveredValue"
+                            style="@style/TextValue"
+                            android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(viewmodel.globalResultLiveData.totalRecovered))}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvTotalRecoveredLabel" />
 
-            </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </TableRow>
+                </com.google.android.material.card.MaterialCardView>
 
-    </TableLayout>
+            </TableRow>
+
+        </TableLayout>
+
+        <ProgressBar
+            android:visibility="@{viewmodel.globalResultLiveData != null ? View.GONE : View.VISIBLE}"
+            android:id="@+id/pbOverView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tbOverview"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
