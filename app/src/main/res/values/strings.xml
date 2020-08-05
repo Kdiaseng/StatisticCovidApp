@@ -6,4 +6,6 @@
     <string name="countries">countries</string>
     <string name="new_confirmed">New Confirmed</string>
     <string name="new_confirmed_value">18.365.565</string>
+    <string name="country">Country</string>
+    <string name="favorite">favorite</string>
 </resources>

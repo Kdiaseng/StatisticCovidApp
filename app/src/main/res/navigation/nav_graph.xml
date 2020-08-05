@@ -13,7 +13,7 @@
     <fragment
         android:id="@+id/countriesFragment"
         android:name="br.itbam.statisticcovid.CountriesFragment"
-        android:label="fragment_countries"
+        android:label="Countries"
         tools:layout="@layout/fragment_countries" />
     <fragment
         android:id="@+id/detailsFragment"
