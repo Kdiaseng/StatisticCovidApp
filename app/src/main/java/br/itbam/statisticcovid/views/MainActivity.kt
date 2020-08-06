@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import br.itbam.statisticcovid.R
+import br.itbam.statisticcovid.utils.SharedPreferenceUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

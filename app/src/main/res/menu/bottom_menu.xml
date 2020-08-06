@@ -11,4 +11,10 @@
         android:title="@string/countries"
         android:icon="@drawable/ic_list_country"/>
 
+    <item
+        android:icon="@drawable/ic_country"
+        android:id="@+id/detailsFragment"
+        android:title="@string/favorite"
+        />
+
 </menu>

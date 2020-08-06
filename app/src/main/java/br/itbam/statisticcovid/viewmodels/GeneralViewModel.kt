@@ -34,6 +34,12 @@ class GeneralViewModel : ViewModel() {
         }
     }
 
+    fun getCountryByCode(code: String): Country?{
+        return _countriesLiveData.value?.find {country ->
+            country.countryCode == code
+        }
+    }
+
     private fun setCountries(responseOverview: ResponseOverview) {
         _globalResultLiveData.value = responseOverview.global
     }

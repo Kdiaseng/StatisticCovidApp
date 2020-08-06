@@ -25,6 +25,8 @@
         android:label="Details"
         tools:layout="@layout/fragment_details" >
         <argument
+            app:nullable="true"
+            android:defaultValue="@null"
             app:argType="br.itbam.statisticcovid.data.Country"
             android:name="country" />
     </fragment>

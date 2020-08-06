@@ -1,6 +1,5 @@
 package br.itbam.statisticcovid.views.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,9 @@ import br.itbam.statisticcovid.R
 import br.itbam.statisticcovid.adapters.CountryAdapter
 import br.itbam.statisticcovid.data.Country
 import br.itbam.statisticcovid.databinding.FragmentCountriesBinding
+import br.itbam.statisticcovid.utils.SharedPreferenceUtils
 import br.itbam.statisticcovid.viewmodels.GeneralViewModel
+import br.itbam.statisticcovid.views.MainActivity
 import kotlinx.android.synthetic.main.fragment_countries.*
 
 class CountriesFragment : Fragment() {
@@ -42,8 +43,9 @@ class CountriesFragment : Fragment() {
 
     private fun loadRecyclerView() {
         generalViewModel.countriesLiveData.observe(viewLifecycleOwner, Observer {
-            rvCountries.adapter = CountryAdapter(it, {country ->
-               val action = CountriesFragmentDirections.actionCountriesFragmentToDetailsFragment(country)
+            rvCountries.adapter = CountryAdapter(it, { country ->
+                val action =
+                    CountriesFragmentDirections.actionCountriesFragmentToDetailsFragment(country)
                 rvCountries.findNavController().navigate(action)
             }, {
                 saveCountryInSharedPreference(it)
@@ -54,15 +56,10 @@ class CountriesFragment : Fragment() {
     }
 
     private fun saveCountryInSharedPreference(country: Country) {
-        val shared = requireActivity().getSharedPreferences(
+        SharedPreferenceUtils(requireActivity()).saveStringInPreference(
             getString(R.string.code_country),
-            Context.MODE_PRIVATE
+            country.countryCode
         )
-
-       shared.edit().apply {
-            putString(getString(R.string.code_country), country.countryCode)
-            apply()
-        }
     }
 
 }
