@@ -42,9 +42,9 @@ class CountriesFragment : Fragment() {
 
     private fun loadRecyclerView() {
         generalViewModel.countriesLiveData.observe(viewLifecycleOwner, Observer {
-            rvCountries.adapter = CountryAdapter(it, {
-                rvCountries.findNavController()
-                    .navigate(R.id.action_countriesFragment_to_detailsFragment)
+            rvCountries.adapter = CountryAdapter(it, {country ->
+               val action = CountriesFragmentDirections.actionCountriesFragmentToDetailsFragment(country)
+                rvCountries.findNavController().navigate(action)
             }, {
                 saveCountryInSharedPreference(it)
             })

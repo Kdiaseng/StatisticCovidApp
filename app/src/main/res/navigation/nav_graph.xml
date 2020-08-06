@@ -23,5 +23,9 @@
         android:id="@+id/detailsFragment"
         android:name="br.itbam.statisticcovid.views.fragments.DetailsFragment"
         android:label="Details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            app:argType="br.itbam.statisticcovid.data.Country"
+            android:name="country" />
+    </fragment>
 </navigation>

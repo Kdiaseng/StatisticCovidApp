@@ -1,8 +1,11 @@
 package br.itbam.statisticcovid.data
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
-class Country (
+@Parcelize
+data class Country (
     @SerializedName("Country")
     val country: String,
 
@@ -32,5 +35,5 @@ class Country (
 
     var isSelected: Boolean
 
-)
+) : Parcelable
 
