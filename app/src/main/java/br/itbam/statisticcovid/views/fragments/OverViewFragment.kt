@@ -19,10 +19,12 @@ class OverViewFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dataBinding = FragmentOverViewBinding.inflate(inflater, container, false)
+
         generalViewModel = ViewModelProvider(requireActivity()).get(GeneralViewModel::class.java)
-        dataBinding.viewmodel = generalViewModel
-        dataBinding.lifecycleOwner = this
+        dataBinding = FragmentOverViewBinding.inflate(inflater, container, false).apply {
+            lifecycleOwner = this@OverViewFragment
+            viewmodel = generalViewModel
+        }
         return dataBinding.root
     }
 
