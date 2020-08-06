@@ -1,18 +1,22 @@
 package br.itbam.statisticcovid.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.itbam.statisticcovid.data.Country
 import br.itbam.statisticcovid.databinding.ItemCountryBinding
 
-class CountryAdapter(private val countries: ArrayList<Country>) :
+class CountryAdapter(private val countries: ArrayList<Country>,val onItemClick: (country: Country) -> Unit) :
     RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
 
-    class ViewHolder(private val itemCountryBinding: ItemCountryBinding) :
+    inner class ViewHolder(private val itemCountryBinding: ItemCountryBinding) :
         RecyclerView.ViewHolder(itemCountryBinding.root) {
         fun bindView(country: Country) {
             itemCountryBinding.item = country
+            itemCountryBinding.setShowDetails {
+                onItemClick(country)
+            }
         }
     }
 

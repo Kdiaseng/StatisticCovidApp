@@ -4,12 +4,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <import type="android.view.View" />
+        <variable
+            name="showDetails"
+            type="View.OnClickListener" />
         <variable
             name="item"
             type="br.itbam.statisticcovid.data.Country" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
+        android:onClick="@{showDetails}"
         android:clickable="true"
         android:layout_margin="8dp"
         app:cardCornerRadius="5dp"
@@ -53,7 +58,7 @@
                 android:layout_height="50dp"
                 android:layout_marginEnd="8dp"
                 android:contentDescription="@string/favorite"
-                android:src="@drawable/ic_star_off"
+                app:changeImage="@{@drawable/ic_start_on}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
