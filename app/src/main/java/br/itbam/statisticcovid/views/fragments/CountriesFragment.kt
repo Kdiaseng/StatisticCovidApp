@@ -20,14 +20,14 @@ class CountriesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        generalViewModel = ViewModelProvider(this).get(GeneralViewModel::class.java)
+        generalViewModel = ViewModelProvider(requireActivity()).get(GeneralViewModel::class.java)
 
         return inflater.inflate(R.layout.fragment_countries, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        generalViewModel.getStatisticDataCovidWorld()
+//        generalViewModel.getStatisticDataCovidWorld()
         loadRecyclerView()
 
     }

@@ -20,7 +20,7 @@ class OverViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         dataBinding = FragmentOverViewBinding.inflate(inflater, container, false)
-        generalViewModel = ViewModelProvider(this).get(GeneralViewModel::class.java)
+        generalViewModel = ViewModelProvider(requireActivity()).get(GeneralViewModel::class.java)
         dataBinding.viewmodel = generalViewModel
         dataBinding.lifecycleOwner = this
         return dataBinding.root
