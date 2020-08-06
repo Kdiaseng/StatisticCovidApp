@@ -5,6 +5,7 @@
 
     <data>
         <import type="java.text.NumberFormat" />
+        <import type="android.view.View"/>
         <variable
             name="countryDetail"
             type="br.itbam.statisticcovid.data.Country" />
@@ -29,7 +30,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:scrollHorizontally="true"
-            android:text="@{countryDetail.country}"
+            android:text="@{countryDetail != null ?  countryDetail.country : @string/attention }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +44,7 @@
             style="@style/TextAppearance.AppCompat.Caption"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{countryDetail.slug}"
+            android:text="@{countryDetail != null ? countryDetail.slug: @string/alert}"
             android:textSize="23sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,12 +55,13 @@
             android:id="@+id/tvDetailsCodeCountry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{countryDetail.countryCode}"
+            android:text="@{countryDetail != null ? countryDetail.countryCode: @string/message_alert}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDetailsSlugCountry" />
 
         <com.google.android.material.card.MaterialCardView
+            android:visibility="@{countryDetail !=null ? View.VISIBLE : View.GONE}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
