@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="java.text.NumberFormat" />
         <variable
             name="countryDetail"
             type="br.itbam.statisticcovid.data.Country" />
@@ -92,7 +93,7 @@
                     android:id="@+id/tvDetailsTotalConfirmedValue"
                     style="@style/TextValue"
                     android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(countryDetail.totalConfirmed)}"
+                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalConfirmed))}"
                     app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalConfirmedLabel"
                     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -111,7 +112,7 @@
                     android:id="@+id/tvDetailsNewConfirmedValue"
                     style="@style/TextValue"
                     android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(countryDetail.totalConfirmed)}"
+                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalConfirmed))}"
                     app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewConfirmedLabel"
                     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -132,7 +133,7 @@
                     style="@style/TextValue"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(countryDetail.newDeaths)}"
+                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.newDeaths))}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalConfirmedValue" />
 
@@ -154,7 +155,7 @@
                     style="@style/TextValue"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(countryDetail.totalDeaths)}"
+                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalDeaths))}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewDeathsValue" />
 
@@ -173,7 +174,7 @@
                     android:id="@+id/tvDetailsNewRecoveredValue"
                     style="@style/TextValue"
                     android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(countryDetail.newRecovered)}"
+                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.newRecovered))}"
                     app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewRecoveredLabel"
                     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -196,7 +197,7 @@
                     android:id="@+id/tvDetailsTotalRecoveredValue"
                     style="@style/TextValue"
                     android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(countryDetail.totalRecovered)}"
+                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalRecovered))}"
                     app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalRecoveredLabel"
                     app:layout_constraintEnd_toEndOf="parent" />
 
