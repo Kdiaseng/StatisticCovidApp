@@ -1,6 +1,7 @@
 package br.itbam.statisticcovid.views.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,13 +40,15 @@ class CountriesFragment : Fragment() {
 
     private fun loadRecyclerView() {
         generalViewModel.countriesLiveData.observe(viewLifecycleOwner, Observer {
-            rvCountries.adapter = CountryAdapter(it){
-                Toast.makeText(requireContext(), "clicked ${it.country}", Toast.LENGTH_SHORT).show()
-            }
+            rvCountries.adapter = CountryAdapter(it,{
+                Toast.makeText(requireContext(), "Country ${it.country}", Toast.LENGTH_SHORT).show()
+            },{
+                Toast.makeText(requireContext(), "STAR", Toast.LENGTH_SHORT).show()
+                Log.e("star", it.isSelected.toString())
+            })
             rvCountries.layoutManager =
                 StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         })
     }
-
 
 }

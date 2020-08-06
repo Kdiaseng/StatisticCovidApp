@@ -1,24 +1,22 @@
 package br.itbam.statisticcovid.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.itbam.statisticcovid.data.Country
 import br.itbam.statisticcovid.databinding.ItemCountryBinding
 
-class CountryAdapter(private val countries: ArrayList<Country>,val onItemClick: (country: Country) -> Unit) :
+class CountryAdapter(
+    private val countries: ArrayList<Country>,
+    val onItemClick: (country: Country) -> Unit,
+    val onClickStar: (country: Country) -> Unit
+) :
     RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
 
-    inner class ViewHolder(private val itemCountryBinding: ItemCountryBinding) :
-        RecyclerView.ViewHolder(itemCountryBinding.root) {
-        fun bindView(country: Country) {
-            itemCountryBinding.item = country
-            itemCountryBinding.setShowDetails {
-                onItemClick(country)
-            }
-        }
-    }
+    private var index: Int = -1
+
+    class ViewHolder(val itemCountryBinding: ItemCountryBinding) :
+        RecyclerView.ViewHolder(itemCountryBinding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -30,6 +28,18 @@ class CountryAdapter(private val countries: ArrayList<Country>,val onItemClick: 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val country = countries[position]
-        holder.bindView(country)
+        holder.itemCountryBinding.item = country
+
+        holder.itemCountryBinding.setShowDetails {
+            onItemClick(country)
+        }
+
+        holder.itemCountryBinding.setSetFavorite {
+            index = position
+            notifyDataSetChanged()
+            onClickStar(country)
+        }
+        country.isSelected = index == position
+
     }
 }

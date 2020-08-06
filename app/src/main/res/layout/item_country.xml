@@ -8,6 +8,10 @@
         <variable
             name="showDetails"
             type="View.OnClickListener" />
+
+        <variable
+            name="setFavorite"
+            type="View.OnClickListener" />
         <variable
             name="item"
             type="br.itbam.statisticcovid.data.Country" />
@@ -54,11 +58,12 @@
 
             <ImageView
                 android:id="@+id/ivFavorite"
+                android:onClick="@{setFavorite}"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="8dp"
                 android:contentDescription="@string/favorite"
-                app:changeImage="@{@drawable/ic_start_on}"
+                app:changeImage="@{item.isSelected ? @drawable/ic_star_selected : @drawable/ic_star_not_selected }"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

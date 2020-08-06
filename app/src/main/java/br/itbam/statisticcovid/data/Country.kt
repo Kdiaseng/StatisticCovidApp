@@ -28,7 +28,9 @@ class Country (
     val newRecovered: Long,
 
     @SerializedName("TotalRecovered")
-    val totalRecovered: Long
+    val totalRecovered: Long,
+
+    var isSelected: Boolean
 
 )
 
