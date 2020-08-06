@@ -1,18 +1,20 @@
 package br.itbam.statisticcovid.views.fragments
 
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import br.itbam.statisticcovid.R
 import br.itbam.statisticcovid.adapters.CountryAdapter
-import br.itbam.statisticcovid.viewmodels.GeneralViewModel
+import br.itbam.statisticcovid.data.Country
 import br.itbam.statisticcovid.databinding.FragmentCountriesBinding
+import br.itbam.statisticcovid.viewmodels.GeneralViewModel
 import kotlinx.android.synthetic.main.fragment_countries.*
 
 class CountriesFragment : Fragment() {
@@ -40,15 +42,27 @@ class CountriesFragment : Fragment() {
 
     private fun loadRecyclerView() {
         generalViewModel.countriesLiveData.observe(viewLifecycleOwner, Observer {
-            rvCountries.adapter = CountryAdapter(it,{
-                Toast.makeText(requireContext(), "Country ${it.country}", Toast.LENGTH_SHORT).show()
-            },{
-                Toast.makeText(requireContext(), "STAR", Toast.LENGTH_SHORT).show()
-                Log.e("star", it.isSelected.toString())
+            rvCountries.adapter = CountryAdapter(it, {
+                rvCountries.findNavController()
+                    .navigate(R.id.action_countriesFragment_to_detailsFragment)
+            }, {
+                saveCountryInSharedPreference(it)
             })
             rvCountries.layoutManager =
                 StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         })
+    }
+
+    private fun saveCountryInSharedPreference(country: Country) {
+        val shared = requireActivity().getSharedPreferences(
+            getString(R.string.code_country),
+            Context.MODE_PRIVATE
+        )
+
+       shared.edit().apply {
+            putString(getString(R.string.code_country), country.countryCode)
+            apply()
+        }
     }
 
 }

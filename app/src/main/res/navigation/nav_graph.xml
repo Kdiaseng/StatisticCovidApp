@@ -14,10 +14,14 @@
         android:id="@+id/countriesFragment"
         android:name="br.itbam.statisticcovid.views.fragments.CountriesFragment"
         android:label="Countries"
-        tools:layout="@layout/fragment_countries" />
+        tools:layout="@layout/fragment_countries" >
+        <action
+            android:id="@+id/action_countriesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="br.itbam.statisticcovid.views.fragments.DetailsFragment"
-        android:label="fragment_details"
+        android:label="Details"
         tools:layout="@layout/fragment_details" />
 </navigation>

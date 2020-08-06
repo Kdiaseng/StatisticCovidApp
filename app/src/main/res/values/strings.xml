@@ -18,4 +18,6 @@
     <string name="new_deaths">New Deaths</string>
     <string name="new_recovered_label">New Recovered</string>
     <string name="total_recovered_label">Total Recovered</string>
+    <string name="code_country">CODE_COUNTRY</string>
+
 </resources>

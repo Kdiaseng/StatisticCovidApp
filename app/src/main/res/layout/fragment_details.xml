@@ -55,58 +55,57 @@
         app:layout_constraintVertical_bias="0.18">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
 
             <TextView
                 android:id="@+id/tvDetailsNewConfirmedLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="19dp"
                 android:text="@string/new_confirmed"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvDetailsTotalConfirmedValue"
                 style="@style/TextValue"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/new_confirmed_value"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewConfirmedValue" />
+                app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalConfirmedLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
                 android:id="@+id/tvDetailsTotalConfirmedLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
                 android:text="@string/total"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewConfirmedLabel" />
 
             <TextView
                 android:id="@+id/tvDetailsNewConfirmedValue"
                 style="@style/TextValue"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/new_confirmed_value"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewConfirmedLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
                 android:id="@+id/tvDetailsNewDeathsLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="22dp"
                 android:text="@string/total_deaths"
-                android:textSize="24sp"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewDeathsValue"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalConfirmedLabel" />
 
@@ -114,7 +113,7 @@
                 android:id="@+id/tvDetailsNewDeathsValue"
                 style="@style/TextValue"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/new_confirmed_value"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalConfirmedValue" />
@@ -124,10 +123,11 @@
                 android:id="@+id/tvDetailsTotalDeathsLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="21dp"
                 android:text="@string/total_deaths_label"
-                android:textSize="24sp"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalDeathsValue"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewDeathsLabel" />
 
@@ -135,7 +135,7 @@
                 android:id="@+id/tvDetailsTotalDeathsValue"
                 style="@style/TextValue"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/new_confirmed_value"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewDeathsValue" />
@@ -144,21 +144,22 @@
                 android:id="@+id/tvDetailsNewRecoveredLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="19dp"
                 android:text="@string/new_recovered"
-                android:textSize="24sp"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalDeathsLabel" />
 
             <TextView
                 android:id="@+id/tvDetailsNewRecoveredValue"
                 style="@style/TextValue"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/new_confirmed_value"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalDeathsValue" />
+                app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewRecoveredLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
