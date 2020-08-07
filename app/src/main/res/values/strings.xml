@@ -24,8 +24,7 @@
     <string name="attention">ATTENTION</string>
     <string name="alert">There is no favorite country</string>
     <string name="message_alert">go to the list and select a country</string>
-
-
+    <string name="search">search</string>
 
 
 </resources>
