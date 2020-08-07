@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/overViewFragment"
         android:name="br.itbam.statisticcovid.views.fragments.OverViewFragment"
-        android:label="Convid - 19 in World"
+        android:label="@string/title_overview"
         tools:layout="@layout/fragment_over_view" />
     <fragment
         android:id="@+id/countriesFragment"
         android:name="br.itbam.statisticcovid.views.fragments.CountriesFragment"
-        android:label="Countries"
+        android:label="@string/countries"
         tools:layout="@layout/fragment_countries" >
         <action
             android:id="@+id/action_countriesFragment_to_detailsFragment"
@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="br.itbam.statisticcovid.views.fragments.DetailsFragment"
-        android:label="Details"
+        android:label="@string/details"
         tools:layout="@layout/fragment_details" >
         <argument
             app:nullable="true"

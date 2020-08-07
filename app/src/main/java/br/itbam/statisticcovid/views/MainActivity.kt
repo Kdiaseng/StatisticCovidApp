@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import br.itbam.statisticcovid.R
+import br.itbam.statisticcovid.utils.LocateHelper
 import br.itbam.statisticcovid.utils.SharedPreferenceUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -16,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         navController = Navigation.findNavController(this,
             R.id.fragment
         )

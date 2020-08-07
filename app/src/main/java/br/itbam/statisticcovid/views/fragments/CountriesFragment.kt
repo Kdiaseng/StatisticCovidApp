@@ -77,4 +77,9 @@ class CountriesFragment : Fragment() {
         )
     }
 
+    override fun onResume() {
+        super.onResume()
+        country_search.setQuery("", true)
+    }
+
 }

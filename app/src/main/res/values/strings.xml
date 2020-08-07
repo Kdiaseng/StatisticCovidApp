@@ -25,6 +25,9 @@
     <string name="alert">There is no favorite country</string>
     <string name="message_alert">go to the list and select a country</string>
     <string name="search">search</string>
+    <string name="language">language</string>
+    <string name="title_overview">Covid-19 in World</string>
+    <string name="details">Details</string>
 
 
 </resources>
