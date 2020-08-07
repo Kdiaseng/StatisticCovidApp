@@ -1,5 +1,5 @@
 
-# Monitoramento de casos de convid-19 mundial
+# Monitoramento de casos de covid-19 mundial
 
 Este aplicativo monstra as estatísticas de casos de covid 19, mundialmente incluindo, número de mortes, 
 número de recuperados, número de novos casos diáriamente.
