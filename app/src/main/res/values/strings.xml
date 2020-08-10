@@ -28,6 +28,8 @@
     <string name="language">language</string>
     <string name="title_overview">Covid-19 in World</string>
     <string name="details">Details</string>
+    <string name="lang_br">português-br</string>
+    <string name="lan_english">english</string>
 
 
 </resources>
