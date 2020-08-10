@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import br.itbam.statisticcovid.R
 import br.itbam.statisticcovid.databinding.FragmentOverViewBinding
 import br.itbam.statisticcovid.utils.LocateHelper
+import br.itbam.statisticcovid.utils.SharedPreferenceUtils
 import br.itbam.statisticcovid.viewmodels.GeneralViewModel
 
 
@@ -15,10 +16,10 @@ class OverViewFragment : Fragment() {
 
     private lateinit var generalViewModel: GeneralViewModel
     private lateinit var dataBinding: FragmentOverViewBinding
-    private var isFlagBr: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        checkLocaleInPreference()
         setHasOptionsMenu(true)
     }
 
@@ -28,20 +29,22 @@ class OverViewFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.icLanguage ->{
-                 LocateHelper.setAppLocale(requireActivity(), "br" )
-                 reloadActivity()
-            }
-
-            R.id.icLanguageBr ->{
-                LocateHelper.setAppLocale(requireActivity(), "" )
-                reloadActivity()
-            }
+            R.id.icLanguage -> reloadActivity("br")
+            R.id.icLanguageBr -> reloadActivity("")
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private fun reloadActivity() {
+    private fun saveLanguage(locale: String = "") {
+        SharedPreferenceUtils(requireActivity()).saveStringInPreference(
+            getString(R.string.code_language),
+            locale
+        )
+    }
+
+    private fun reloadActivity(locale: String) {
+        saveLanguage(locale)
+        LocateHelper.setAppLocale(requireActivity(), locale )
         activity?.finish()
         activity?.startActivity(activity?.intent)
     }
@@ -62,6 +65,13 @@ class OverViewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadData()
+    }
+
+    private fun checkLocaleInPreference() {
+        val locale =
+            SharedPreferenceUtils(requireActivity()).getPreferenceString(getString(R.string.code_language))
+        LocateHelper.setAppLocale(requireActivity(), locale?:"")
+
     }
 
     private fun loadData() {
