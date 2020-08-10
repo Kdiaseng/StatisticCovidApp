@@ -25,10 +25,13 @@ Faça o clone deste repositório:
 git clone https://github.com/Kdiaseng/StatisticCovidApp.git
 ```
 
-## Tecnológias utilizadas
+## Tecnologias utilizadas
 - Arquitetura MVVM;
 - DataBinding;
 - Retrofi2t;
 - Navigation component;
+
+## API
+https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest#00030720-fae3-4c72-8aea-ad01ba17adf8
 
 
