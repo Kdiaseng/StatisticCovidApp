@@ -12,202 +12,209 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/background"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".views.fragments.DetailsFragment">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/tvDetailsNameCountry"
-            style="@style/TextAppearance.AppCompat.Display1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:scrollHorizontally="true"
-            android:text="@{countryDetail != null ?  countryDetail.country : @string/attention }"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:textAlignment="center"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:scrollHorizontally="true"
-            android:id="@+id/tvDetailsSlugCountry"
-            style="@style/TextAppearance.AppCompat.Caption"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@{countryDetail != null ? countryDetail.slug: @string/alert}"
-            android:textSize="23sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDetailsNameCountry" />
-
-        <TextView
-            style="@style/TextAppearance.AppCompat.Caption"
-            android:id="@+id/tvDetailsCodeCountry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{countryDetail != null ? countryDetail.countryCode: @string/message_alert}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDetailsSlugCountry" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:visibility="@{countryDetail !=null ? View.VISIBLE : View.GONE}"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="32dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDetailsCodeCountry"
-            app:layout_constraintVertical_bias="0.18">
+            tools:context=".views.fragments.DetailsFragment">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/tvDetailsNameCountry"
+                style="@style/TextAppearance.AppCompat.Display1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:text="@{countryDetail != null ?  countryDetail.country : @string/attention }"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:textAlignment="center"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:id="@+id/tvDetailsSlugCountry"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{countryDetail != null ? countryDetail.slug: @string/alert}"
+                android:textSize="23sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetailsNameCountry" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:id="@+id/tvDetailsCodeCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{countryDetail != null ? countryDetail.countryCode: @string/message_alert}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetailsSlugCountry" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:visibility="@{countryDetail !=null ? View.VISIBLE : View.GONE}"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetailsCodeCountry"
+                app:layout_constraintVertical_bias="0.18">
 
-                <TextView
-                    android:id="@+id/tvDetailsNewConfirmedLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/new_confirmed"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
 
-                <TextView
-                    android:id="@+id/tvDetailsTotalConfirmedValue"
-                    style="@style/TextValue"
-                    android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalConfirmed))}"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalConfirmedLabel"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        android:id="@+id/tvDetailsNewConfirmedLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/new_confirmed"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tvDetailsTotalConfirmedLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/total"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewConfirmedLabel" />
+                    <TextView
+                        android:id="@+id/tvDetailsTotalConfirmedValue"
+                        style="@style/TextValue"
+                        android:layout_marginEnd="8dp"
+                        android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalConfirmed))}"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalConfirmedLabel"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-                <TextView
-                    android:id="@+id/tvDetailsNewConfirmedValue"
-                    style="@style/TextValue"
-                    android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalConfirmed))}"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewConfirmedLabel"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        android:id="@+id/tvDetailsTotalConfirmedLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/total"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewConfirmedLabel" />
 
-                <TextView
-                    android:id="@+id/tvDetailsNewDeathsLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="22dp"
-                    android:text="@string/total_deaths"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewDeathsValue"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalConfirmedLabel" />
+                    <TextView
+                        android:id="@+id/tvDetailsNewConfirmedValue"
+                        style="@style/TextValue"
+                        android:layout_marginEnd="8dp"
+                        android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.newConfirmed))}"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewConfirmedLabel"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-                <TextView
-                    android:id="@+id/tvDetailsNewDeathsValue"
-                    style="@style/TextValue"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.newDeaths))}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalConfirmedValue" />
+                    <TextView
+                        android:id="@+id/tvDetailsNewDeathsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="22dp"
+                        android:text="@string/total_deaths"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewDeathsValue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalConfirmedLabel" />
 
-
-                <TextView
-                    android:id="@+id/tvDetailsTotalDeathsLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="21dp"
-                    android:text="@string/total_deaths_label"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalDeathsValue"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewDeathsLabel" />
-
-                <TextView
-                    android:id="@+id/tvDetailsTotalDeathsValue"
-                    style="@style/TextValue"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalDeaths))}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewDeathsValue" />
-
-                <TextView
-                    android:id="@+id/tvDetailsNewRecoveredLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/new_recovered"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalDeathsLabel" />
-
-                <TextView
-                    android:id="@+id/tvDetailsNewRecoveredValue"
-                    style="@style/TextValue"
-                    android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.newRecovered))}"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewRecoveredLabel"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        android:id="@+id/tvDetailsNewDeathsValue"
+                        style="@style/TextValue"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.newDeaths))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalConfirmedValue" />
 
 
-                <TextView
-                    android:id="@+id/tvDetailsTotalRecoveredLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="@string/total_recovered"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewRecoveredLabel" />
+                    <TextView
+                        android:id="@+id/tvDetailsTotalDeathsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="21dp"
+                        android:text="@string/total_deaths_label"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalDeathsValue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewDeathsLabel" />
+
+                    <TextView
+                        android:id="@+id/tvDetailsTotalDeathsValue"
+                        style="@style/TextValue"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalDeaths))}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewDeathsValue" />
+
+                    <TextView
+                        android:id="@+id/tvDetailsNewRecoveredLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/new_recovered"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailsTotalDeathsLabel" />
+
+                    <TextView
+                        android:id="@+id/tvDetailsNewRecoveredValue"
+                        style="@style/TextValue"
+                        android:layout_marginEnd="8dp"
+                        android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.newRecovered))}"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailsNewRecoveredLabel"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
 
-                <TextView
-                    android:id="@+id/tvDetailsTotalRecoveredValue"
-                    style="@style/TextValue"
-                    android:layout_marginEnd="8dp"
-                    android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalRecovered))}"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalRecoveredLabel"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    <TextView
+                        android:id="@+id/tvDetailsTotalRecoveredLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/total_recovered"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailsNewRecoveredLabel" />
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/tvDetailsTotalRecoveredValue"
+                        style="@style/TextValue"
+                        android:layout_marginEnd="8dp"
+                        android:text="@{String.valueOf(NumberFormat.getNumberInstance().format(countryDetail.totalRecovered))}"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailsTotalRecoveredLabel"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-        </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </layout>

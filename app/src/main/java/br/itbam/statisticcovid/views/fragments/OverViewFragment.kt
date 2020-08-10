@@ -1,12 +1,13 @@
 package br.itbam.statisticcovid.views.fragments
 
+import android.content.Intent.getIntent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import br.itbam.statisticcovid.R
 import br.itbam.statisticcovid.databinding.FragmentOverViewBinding
+import br.itbam.statisticcovid.utils.LocateHelper
 import br.itbam.statisticcovid.viewmodels.GeneralViewModel
 
 
@@ -14,6 +15,36 @@ class OverViewFragment : Fragment() {
 
     private lateinit var generalViewModel: GeneralViewModel
     private lateinit var dataBinding: FragmentOverViewBinding
+    private var isFlagBr: Boolean = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.actionbar_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.icLanguage ->{
+                 LocateHelper.setAppLocale(requireActivity(), "br" )
+                 reloadActivity()
+            }
+
+            R.id.icLanguageBr ->{
+                LocateHelper.setAppLocale(requireActivity(), "" )
+                reloadActivity()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun reloadActivity() {
+        activity?.finish()
+        activity?.startActivity(activity?.intent)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
