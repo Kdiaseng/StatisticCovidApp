@@ -31,15 +31,19 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:textColor="@color/colorGreen"
                 android:id="@+id/tvNameCountry"
                 style="@style/TextAppearance.AppCompat.Title"
-                android:textSize="25sp"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
                 android:text="@{item.country}"
+                android:textColor="@color/colorGreen"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/ivFavorite"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
