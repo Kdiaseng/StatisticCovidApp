@@ -29,5 +29,8 @@
     <string name="language">idioma</string>
     <string name="title_overview">Covid-19 no Mundo</string>
     <string name="details">Detalhes</string>
+    <string name="lang_br">português-br</string>
+    <string name="lan_english">english</string>
+    <string name="code_language">CODE_LANGUAGE</string>
 
 </resources>

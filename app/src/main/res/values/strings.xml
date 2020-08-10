@@ -19,6 +19,7 @@
     <string name="new_recovered_label">New Recovered</string>
     <string name="total_recovered_label">Total Recovered</string>
     <string name="code_country">CODE_COUNTRY</string>
+    <string name="code_language">CODE_LANGUAGE</string>
     <string name="total_recovered">Total recovered</string>
     <string name="preference_key">PREFERENCE_KEY</string>
     <string name="attention">ATTENTION</string>
